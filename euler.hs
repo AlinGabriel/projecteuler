@@ -15,7 +15,7 @@ fib n = fibo 1 1 n
         fibo a b count = fibo (a + b) a (count - 1)
 
 fibsum :: Integral a => a -> a
-fibsum limit = sum (takeWhile (< limit) [ fib n | n <- [2,5..]])
+fibsum n = sum (takeWhile (< n) [ fib n | n <- [2,5..]])
 
 -- (fibsum 4000000) == 4613732
 
@@ -116,7 +116,7 @@ bigproduct n x = findmax nums (take x nums) 1
 
 -- Problem 9 Special Pythagorean triplet
 triplet :: Integral a => a
-triplet = head [a * b * c | a <- [3..993], b <- [(a+1)..(1000-a-1)], 
+triplet = head [a * b * c | a <- [3..993], b <- [(a+1)..(999-a)],
   let c = 1000 - a - b , a ^ 2 + b ^ 2 == c ^ 2]
 
 -- (triplet) == 31875000
