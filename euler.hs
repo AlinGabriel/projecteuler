@@ -1,5 +1,5 @@
 -- @author Alin Gabriel Arhip
-
+-- Use :set +s to measure time execution
 
 -- Problem 1 Multiples of 3 or 5
 multiples :: Int
@@ -116,7 +116,7 @@ bigproduct n x = findmax nums (take x nums) 1
 
 -- Problem 9 Special Pythagorean triplet
 triplet :: Integral a => a
-triplet = head [a * b * c | a <- [3..1000], b <- [(a+1)..(1000-a-1)], 
+triplet = head [a * b * c | a <- [3..993], b <- [(a+1)..(1000-a-1)], 
   let c = 1000 - a - b , a ^ 2 + b ^ 2 == c ^ 2]
 
 -- (triplet) == 31875000
